@@ -1,0 +1,29 @@
+---
+
+- name: find pip3 binary
+  shell: |
+    set -eo pipefail
+    whereis -b pip3 | cut -d " " -f 2
+  register: pip3_binary
+  changed_when: pip3_binary.stdout | length > 0
+
+- name: pip upgrade
+  command: "{{ pip3_binary.stdout }} install --upgrade pip"
+  register: pip_upgrade
+  changed_when: pip_upgrade.rc != 0
+  become: yes
+
+- name: find pip3 binary
+  shell: |
+    set -eo pipefail
+    whereis -b pip3 | cut -d " " -f 2
+  register: pip3_binary
+  changed_when: pip3_binary.stdout | length > 0
+
+- name: "install python modules with pip"
+  include_tasks: install-pip-module.yml
+  vars:
+    pip3_binary_path: "{{ pip3_binary.stdout }}"
+  loop: "{{ k8s_base.pip.modules }}"
+  loop_control:
+    loop_var: python_module

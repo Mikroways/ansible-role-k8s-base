@@ -1,0 +1,7 @@
+---
+
+- name: install packages
+  include_tasks: redhat-install-package-x86_64.yml
+  loop: "{{ k8s_base.packages }}"
+  loop_control:
+    loop_var: package

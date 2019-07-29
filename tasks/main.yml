@@ -1,0 +1,13 @@
+---
+
+- include_tasks: redhat-repos-x86_64.yml
+  when:
+    - ansible_facts['architecture'] == 'x86_64'
+    - ansible_facts['os_family'] == 'RedHat'
+
+- include_tasks: redhat-packages-x86_64.yml
+  when:
+    - ansible_facts['architecture'] == 'x86_64'
+    - ansible_facts['os_family'] == 'RedHat'
+
+- include_tasks: install-pip-modules.yml
