@@ -1,29 +1,28 @@
 ---
 
-- name: find pip3 binary
+- name: find pip binary
   shell: |
     set -eo pipefail
-    whereis -b pip3 | cut -d " " -f 2
-  register: pip3_binary
-  changed_when: pip3_binary.stdout | length > 0
+    whereis -b pip | cut -d " " -f 2
+  register: pip_binary
+  changed_when: pip_binary.stdout | length > 0
 
 - name: pip upgrade
-  command: "{{ pip3_binary.stdout }} install --upgrade pip"
+  command: "{{ pip_binary.stdout }} install --upgrade pip"
   register: pip_upgrade
   changed_when: pip_upgrade.rc != 0
-  become: yes
 
-- name: find pip3 binary
+- name: find pip binary
   shell: |
     set -eo pipefail
-    whereis -b pip3 | cut -d " " -f 2
-  register: pip3_binary
-  changed_when: pip3_binary.stdout | length > 0
+    whereis -b pip | cut -d " " -f 2
+  register: pip_binary
+  changed_when: pip_binary.stdout | length > 0
 
 - name: "install python modules with pip"
   include_tasks: install-pip-module.yml
   vars:
-    pip3_binary_path: "{{ pip3_binary.stdout }}"
+    pip3_binary_path: "{{ pip_binary.stdout }}"
   loop: "{{ python_modules }}"
   loop_control:
     loop_var: python_module

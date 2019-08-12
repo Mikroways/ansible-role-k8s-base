@@ -4,10 +4,8 @@
 install_packages:
   - git
   - python-setuptools
-  - python36
-  - python36-pip
-  - python36-pip
   - python2-pip
+  - python2-openshift
     
 python_modules:
   - setuptools

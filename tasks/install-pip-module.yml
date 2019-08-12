@@ -1,8 +1,7 @@
 ---
 
-- name: "install {{ python_module }} with pip3"
+- name: "install {{ python_module }} with pip"
   pip:
     name: "{{ python_module }}"
     state: present
-    executable: "{{ pip3_binary_path }}"
-  become: yes
+    executable: "{{ pip_binary_path }}"
