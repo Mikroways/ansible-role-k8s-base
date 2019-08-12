@@ -4,4 +4,3 @@
   yum:
     name: "{{ package }}"
     state: present
-  become: yes
