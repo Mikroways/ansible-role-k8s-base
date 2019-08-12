@@ -22,7 +22,7 @@
 - name: "install python modules with pip"
   include_tasks: install-pip-module.yml
   vars:
-    pip3_binary_path: "{{ pip_binary.stdout }}"
+    pip_binary_path: "{{ pip_binary.stdout }}"
   loop: "{{ python_modules }}"
   loop_control:
     loop_var: python_module
