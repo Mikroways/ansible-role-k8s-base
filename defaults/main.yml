@@ -1,18 +1,16 @@
 ---
 # defaults file for k8s-base
 
-k8s_base:
-  packages:
-    - git
-    - python-setuptools
-    - python36
-    - python36-pip
-    - python36-pip
-    - python2-pip
+install_packages:
+  - git
+  - python-setuptools
+  - python36
+  - python36-pip
+  - python36-pip
+  - python2-pip
     
-  pip:
-    modules:
-      - setuptools
-      - PyYAML
-      - pyhelm
-      - openshift
+python_modules:
+  - setuptools
+  - PyYAML
+  - pyhelm
+  - openshift
