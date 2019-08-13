@@ -1,5 +1,11 @@
 ---
 
+- name: change PATH environment
+  template:
+    src: "{{ role_path + '/template/kube_env.sh.j2' }}"
+    dest: "/etc/profile.d/kube_env.sh"
+    mode: '0544'
+
 - include_tasks: redhat-repos-x86_64.yml
   when:
     - ansible_facts['architecture'] == 'x86_64'
