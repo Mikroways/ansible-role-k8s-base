@@ -6,6 +6,7 @@ install_packages:
   - python-setuptools
   - python2-pip
   - python2-openshift
+  - nfs-utils
     
 python_modules:
   - setuptools
