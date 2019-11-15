@@ -34,7 +34,7 @@ passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: m7s_k8s_base }
+         - mikroways.m7s_k8s_base
 
 License
 -------
