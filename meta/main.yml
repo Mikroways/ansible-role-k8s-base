@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: m7s_base
+  role_name: m7s_k8s_base
   author: Matias Emanuel Ferrigno
-  description: Install minimal requeriments on each k8s-master
+  description: Install minimal requeriments on each k8s master
   company: Mikroways
 
   license: GPLv2

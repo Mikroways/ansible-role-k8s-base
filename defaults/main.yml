@@ -1,5 +1,4 @@
 ---
-# defaults file for k8s-base
 
 install_packages:
   - git
