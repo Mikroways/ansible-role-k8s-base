@@ -1,15 +1,12 @@
 ---
 
-install_packages:
+m7s_k8s_base_install_packages:
   - git
   - python-setuptools
   - python2-pip
-  - python2-openshift
   - nfs-utils
   - jq
-    
-python_modules:
-  - setuptools
-  - PyYAML
-  - pyhelm
-  - openshift
+  - python2-pyyaml
+  - python2-openshift
+
+m7s_k8s_base_python_modules: []

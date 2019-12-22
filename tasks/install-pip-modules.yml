@@ -23,6 +23,6 @@
   include_tasks: install-pip-module.yml
   vars:
     pip_binary_path: "{{ pip_binary.stdout }}"
-  loop: "{{ python_modules }}"
+  loop: "{{ m7s_k8s_base_python_modules }}"
   loop_control:
     loop_var: python_module
