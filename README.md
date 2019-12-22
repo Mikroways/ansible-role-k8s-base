@@ -1,4 +1,4 @@
-# mikroways.m7s-k8s-base
+# mikroways.m7s_k8s_base
 
 Install some requirements on k8s management node (usually master nodes) so
 ansible k8s module can easily.
@@ -34,7 +34,7 @@ m7s_k8s_base_python_modules: []
 
   - hosts: kube-master
     roles:
-       - mikroways.m7s-k8s-base
+       - mikroways.m7s_k8s_base
 
 # License
 
