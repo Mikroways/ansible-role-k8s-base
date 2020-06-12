@@ -19,13 +19,31 @@ with k8s. You can change package list changing some of the following variables:
 
 ```yaml
 m7s_k8s_base_install_packages:
-  - git
-  - python-setuptools
-  - python2-pip
-  - nfs-utils
-  - jq
-  - python2-pyyaml
-  - python2-openshift
+  - name: git
+    apt: git
+    yum: git
+    state: present
+  - name: python-setuptools
+    apt: python-setuptools
+    yum: python-setuptools
+    state: present
+  - name: pip
+    apt: python-pip
+    yum: python2-pip
+    state: present
+  - name: nfs-utils
+    yum: nfs-utils
+    state: present
+  - name: jq
+    apt: jq
+    yum: jq
+    state: present
+  - name: nfs-common
+    apt: nfs-common
+    state: present
+  - name: nfs-kernel-server
+    apt: nfs-kernel-server
+    state: present
 
 m7s_k8s_base_python_modules: []
 ```
