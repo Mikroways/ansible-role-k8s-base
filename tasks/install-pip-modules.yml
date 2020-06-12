@@ -4,6 +4,8 @@
   shell: |
     set -eo pipefail
     whereis -b pip | cut -d " " -f 2
+  args:
+    executable: /bin/bash
   register: pip_binary
   changed_when: pip_binary.stdout | length > 0
 
@@ -16,6 +18,8 @@
   shell: |
     set -eo pipefail
     whereis -b pip | cut -d " " -f 2
+  args:
+    executable: /bin/bash
   register: pip_binary
   changed_when: pip_binary.stdout | length > 0
 
