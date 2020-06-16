@@ -45,7 +45,11 @@ m7s_k8s_base_install_packages:
     apt: nfs-kernel-server
     state: present
 
-m7s_k8s_base_python_modules: []
+package_state: present
+
+m7s_k8s_base_python_modules:
+  - PyYAML
+  - openshift
 ```
 
 ## Example Playbook
