@@ -1,17 +1,16 @@
 ---
-
 - name: "install {{ package.name }} on Debian family"
   apt:
-    name: "{{ package.apt }}"
+    name: "{{ package.apt | default(package.name) }}"
     state: "{{ package.state | default(package_state) }}"
   when:
     - ansible_facts['os_family'] == 'Debian'
-    - package.apt is defined
+    - package.apt is defined or (package.apt is undefined and package.yum is undefined)
 
 - name: "install {{ package.name }} on RedHat family"
   yum:
-    name: "{{ package.yum }}"
+    name: "{{ package.yum | default(package.name) }}"
     state: "{{ package.state | default(package_state) }}"
   when:
     - ansible_facts['os_family'] == 'RedHat'
-    - package.yum is defined
+    - package.yum is defined or (package.apt is undefined and package.yum is undefined)

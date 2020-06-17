@@ -6,10 +6,11 @@
     dest: "/etc/profile.d/kube_env.sh"
     mode: '0544'
 
-- include_tasks: redhat-repos-x86_64.yml
+- include_tasks: redhat-repos.yml
   when:
-    - ansible_facts['architecture'] == 'x86_64'
     - ansible_facts['os_family'] == 'RedHat'
+
+- include_tasks: update-cache.yml
 
 - name: install packages
   include_tasks: install-package.yml

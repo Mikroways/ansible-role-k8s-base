@@ -26,9 +26,13 @@ m7s_k8s_base_install_packages:
   - name: nfs-kernel-server
     apt: nfs-kernel-server
     state: present
+  - name: python-openshift
+    yum: python-openshift
+    state: present
 
 package_state: present
+update_cache: true
 
 m7s_k8s_base_python_modules:
-  - PyYAML
-  - openshift
+  - name: PyYAML
+  - name: openshift

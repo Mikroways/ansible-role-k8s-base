@@ -44,12 +44,16 @@ m7s_k8s_base_install_packages:
   - name: nfs-kernel-server
     apt: nfs-kernel-server
     state: present
+  - name: python-openshift
+    yum: python-openshift
+    state: present
 
 package_state: present
+update_cache: true
 
 m7s_k8s_base_python_modules:
-  - PyYAML
-  - openshift
+  - name: PyYAML
+  - name: openshift
 ```
 
 ## Example Playbook
@@ -58,7 +62,22 @@ m7s_k8s_base_python_modules:
     roles:
        - mikroways.m7s_k8s_base
 
+## Changelog
+
+### [2.0.0] - 2020-06-17
+#### Added
+- Debian family support
+- Update cache for apt and yum
+#### Updated
+- Change package list definition
+- Change pip module list definition - Now version is supported
+
+### [1.0.0] - 2019-12-22
+#### Added
+- First stable version
+- CentOS support
+- pip modules support
+
 # License
 
 GPLv2
-

@@ -1,0 +1,12 @@
+---
+- name: "update cache on Debian family"
+  apt:
+    update_cache: "{{ update_cache | default(omit) }}"
+  when:
+    - ansible_facts['os_family'] == 'Debian'
+
+- name: "update cache on RedHat family"
+  yum:
+    update_cache: "{{ update_cache | default(omit) }}"
+  when:
+    - ansible_facts['os_family'] == 'RedHat'
