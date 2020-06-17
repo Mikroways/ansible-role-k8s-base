@@ -1,5 +1,8 @@
 # mikroways.m7s_k8s_base
 
+[![Ansible Galaxy][galaxy_image]][galaxy_link]
+[![Latest tag][tag_image]][tag_url]
+
 Install some requirements on k8s management node (usually master nodes) so
 ansible k8s module can easily.
 
@@ -81,3 +84,8 @@ m7s_k8s_base_python_modules:
 # License
 
 GPLv2
+
+[galaxy_image]:         http://img.shields.io/badge/galaxy-mikroways.m7s__k8s__base-660198.svg?style=flat
+[galaxy_link]:          https://galaxy.ansible.com/Mikroways/m7s_k8s_base
+[tag_image]:            https://img.shields.io/github/v/tag/Mikroways/ansible_role_m7s_k8s_base.svg
+[tag_url]:              https://github.com/Mikroways/ansible_role_m7s_k8s_base/tags
