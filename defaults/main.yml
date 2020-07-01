@@ -23,9 +23,6 @@ m7s_k8s_base_install_packages:
   - name: nfs-common
     apt: nfs-common
     state: present
-  - name: nfs-kernel-server
-    apt: nfs-kernel-server
-    state: present
   - name: python-openshift
     yum: python-openshift
     state: present
